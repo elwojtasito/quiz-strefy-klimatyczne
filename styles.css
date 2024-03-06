@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-image: url('milionerzy.jpeg'); /* Dodaj ścieżkę do swojej grafiki */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  background-color: none; /* Tło z przezroczystością, aby tekst był czytelny */
+  padding: 40px; /* Zwiększamy padding */
+  border-radius: 10px;
+  color: white; /* Kolor tekstu */
+  width: 100%; /* Zwiększamy szerokość kontenera */
+  max-width: 1100px; /* Ograniczamy maksymalną szerokość kontenera */
+  height: 150%; /* Zwiększamy wysokość kontenera */
+  max-height: 900px; /* Ograniczamy maksymalną wysokość kontenera */
+  overflow-y: auto; /* Dodajemy pasek przewijania w razie potrzeby */
+}
+
+.question {
+  font-size: 50px; /* Zwiększamy wielkość czcionki dla pytania */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  list-style: none; /* Usunięcie kropek */
+  padding: 0; /* Usunięcie wewnętrznego marginesu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  font-size: 35px;
+}
+
+.option {
+  padding: 15px; /* Zwiększamy padding dla opcji */
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: rgb(37, 161, 37);
+}
+
+.incorrect {
+  background-color: rgb(139, 29, 29);
+}
+
+.result {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 100px; /* Zwiększamy wielkość czcionki dla wyniku */
+  text-align: center; /* Wyśrodkowanie tekstu */
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.result {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 100px;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards; /* Dodaj animację fadeInUp */
+}
+
+.option {
+  padding: 15px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  animation: zoomIn 0.5s ease forwards; /* Dodaj animację zoomIn */
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question.animate {
+  animation: slideIn 2s forwards;
+}
